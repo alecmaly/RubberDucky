@@ -1,0 +1,1 @@
+java -jar duckencoder.jar -i source.txt -o inject.bin
