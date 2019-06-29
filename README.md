@@ -1,0 +1,2 @@
+# RubberDucky
+Fun DuckyScripts
